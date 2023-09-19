@@ -1,0 +1,75 @@
+ <!DOCTYPE html>
+ <html>
+ <head>
+ 	<meta charset="utf-8">
+ 	<meta name="viewport" content="width=device-width, initial-scale=1">
+ 	<title>Multiples Generator</title>
+ 	<link rel="stylesheet" type="text/css" href="styles.css">
+ </head>
+ <body>
+ 	<div class="container">
+ 		<h1> definition </h1>
+ 		<h2> Create a function that takes two numbers as arguments (num, length) and returns an array of multiples of num until the array length reaches length </h2>
+ 		<br><br>
+ 		<div class="num_input">
+ 			<label for="num">Enter a number:</label>
+            <input type="number" placeholder="Enter a number"  id="num">
+ 		</div>
+ 		<div class="length_input">
+ 			<label for="laength">Enter a length:</label>
+            <input type="number" placeholder="Enter a length"  id="length">
+ 		</div>
+ 		<br>
+        <button id="button-sub">Submit</button>
+        <div id="result_num">
+      		<ul id="result_list">
+      		</ul>
+        </div>
+ 	</div>
+ 	<script type="text/javascript">
+ 		
+ 		document.addEventListener ( "DOMContentLoaded" , () => {
+
+ 			const generateBtn = document.getElementById('button-sub');
+	 			generateBtn.addEventListener("click" , getanddisplayno);
+ 		} );
+
+ 		function getanddisplayno () {
+
+ 			// var used in project
+
+ 			const getinputno = document.getElementById('num')
+ 			const getinputlength = document.getElementById('length');
+ 			const result = document.getElementById('result_list');
+ 			const resultmaindiv = document.getElementById('result_num');
+ 			const num = parseInt(getinputno.value);
+ 			const length = parseInt(getinputlength.value);
+ 			const arr = [] ;
+
+ 			if (isNaN(num) || isNaN(length)) {
+         		 alert("Please enter valid numbers.");
+        		 return;
+		     }
+
+		     // for lup for numebr adn length
+
+		    for (var i = 1 ; arr.length < length ; i++) {
+ 					arr.push(num * i)
+ 			}
+		     
+		     // diplay deta 
+
+ 			arr.forEach((No_of_Multiplies) => {
+ 				var listofresult = document.createElement('li')
+ 				listofresult.textContent = `${No_of_Multiplies}`;
+ 				result.appendChild(listofresult);	
+
+ 			});
+ 		    resultmaindiv.style.display = "block"; 
+  		};
+
+  		console.log()
+
+ 	</script>
+ </body>
+ </html>

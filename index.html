@@ -56,16 +56,21 @@
 		    for (var i = 1 ; arr.length < length ; i++) {
  					arr.push(num * i)
  			}
+
+ 			// Clear previous results
+    			result.innerHTML = "";
 		     
 		     // diplay deta 
 
  			arr.forEach((No_of_Multiplies) => {
- 				var listofresult = document.createElement('li')
- 				listofresult.textContent = `${No_of_Multiplies}`;
+ 				const listofresult = document.createElement("li")
+ 				listofresult.textContent = `No is :- ${No_of_Multiplies}`;
  				result.appendChild(listofresult);	
-
  			});
+
  		    resultmaindiv.style.display = "block"; 
+
+
   		};
 
   		console.log()
